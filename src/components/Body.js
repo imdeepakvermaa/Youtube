@@ -2,8 +2,7 @@ import React from 'react'
 
 const Body = () => {
   return (
-    <div>
-      
+    <div className='bg-black'>
     </div>
   )
 }
