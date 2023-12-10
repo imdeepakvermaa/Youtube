@@ -5,7 +5,7 @@ import RightContainerPart from "./RightContainerPart";
 const MainContainer = () => {
   return (
     <div className="flex">
-      <div className="w-[200px] ">
+      <div className="w-[300px] ">
         <LeftContainerPart />
       </div>
 
