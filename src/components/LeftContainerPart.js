@@ -18,6 +18,7 @@ const LeftContainerPart = () => {
     { name: "History", icon: faScroll },
     { name: "Your videos", icon: faPlay },
     { name: "Watch later", icon: faStopwatch },
+    { name: "Watch later", icon: faStopwatch },
   ];
   return (
     <div className="flex flex-col gap-7 mt-10">
