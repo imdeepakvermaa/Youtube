@@ -45,7 +45,7 @@ const LeftContainerPart = () => {
   ];
 
   return (
-    <div className="max-h-[900px] overflow-y-auto scrollbar-thin scrollbar-thumb-black">
+    <div className="h-[900px]  overflow-y-auto">
       <div className="flex flex-col gap-7 mt-10">
         {contentItems.map((items, index) => (
           <div key={index} className="flex items-center text-white ml-5 gap-7">
