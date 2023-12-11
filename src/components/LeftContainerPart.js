@@ -19,6 +19,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { useSelector } from "react-redux";
 
 const LeftContainerPart = () => {
   const contentItems = [
@@ -43,6 +44,10 @@ const LeftContainerPart = () => {
     { name: "Fashion & Beauty", icon: faShirt },
     { name: "Podcast", icon: faPodcast },
   ];
+
+  const isNavOpen = useSelector(store => store.app.isNavOpen);
+
+  if (!isNavOpen) return null; 
 
   return (
     <div className="h-[900px]  overflow-y-auto">
