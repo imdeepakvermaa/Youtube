@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { YOUTUBE_API } from '../utils/constants';
 
 const RightContainerData = () => {
+
+  useEffect(() => {
+    getVideos();
+  },[]);
+
+  const getVideos = async () => {
+    const data = await fetch(YOUTUBE_API);
+    const json = await data.json();
+    console.log(json);
+
+  };
   return (
     <div className="">
       <div className="h-[300px] w-[300px]">

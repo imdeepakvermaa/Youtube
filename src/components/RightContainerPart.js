@@ -1,29 +1,32 @@
 import React from "react";
 import RightContainerData from "./RightContainerData";
+import ButtonLists from "./ButtonLists";
 
 const RightContainerPart = () => {
   return (
-    <div className=" grid lg:grid-cols-4 md:grid-cols-2  sm:grid-cols-1 lg:gap-20 sm:gap-20 md:gap-20  py-8 mx-16">
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-      <RightContainerData/>
-
-
+    <div>
+      <div className="">
+        <ButtonLists/>
+      </div>
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-14  p-8 mx-16">
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+        <RightContainerData />
+      </div>
     </div>
-    
   );
 };
 
