@@ -43,6 +43,7 @@ const LeftContainerPart = () => {
     { name: "Learning", icon: faLightbulb },
     { name: "Fashion & Beauty", icon: faShirt },
     { name: "Podcast", icon: faPodcast },
+    
   ];
 
   const isNavOpen = useSelector(store => store.app.isNavOpen);
