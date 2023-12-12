@@ -14,11 +14,11 @@ const RightContainerData = ({info}) => {
 
   return (
     <div className="">
-      <div className="h-[360px] w-[350px] ">
+      <div className="h-[360px] w-[320px] ">
         <div>
           <div className="">
             <img
-              className="h-[210px] w-[350px]"
+              className="h-[250px] w-[320px] rounded-2xl "
               src={thumbnails?.high?.url}
               alt="thumbnail"
             />
