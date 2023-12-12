@@ -1,32 +1,31 @@
-import React, { useEffect } from 'react'
-import { YOUTUBE_API } from '../utils/constants';
 
-const RightContainerData = () => {
 
-  useEffect(() => {
-    getVideos();
-  },[]);
+const RightContainerData = ({info}) => {
 
-  const getVideos = async () => {
-    const data = await fetch(YOUTUBE_API);
-    const json = await data.json();
-    console.log(json);
+  if (!info) {
+    return <div className='text-white'>Loading...</div>; // or handle the case where info is undefined
+  }
 
-  };
+
+  console.log(info);
+  const {snippet , statistics} = info;
+  const {channelTitle , title , thumbnails} = snippet;
+
+
   return (
     <div className="">
-      <div className="h-[300px] w-[300px]">
+      <div className="h-[360px] w-[350px] ">
         <div>
           <div className="">
             <img
-              className="h-[130px] w-[300px] rounded-lg"
-              src="https://imgs.search.brave.com/X6_M94sws6cRLn9AV90yHActhzCfntUqHTYTLmWV7fw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2IzLzY0/LzhmL2IzNjQ4ZmY4/YjM3NzhmODUyZWQ0/NDEzMWY1YzA3NjRj/LmpwZw"
+              className="h-[210px] w-[350px]"
+              src={thumbnails?.high?.url}
               alt="thumbnail"
             />
           </div>
         </div>
 
-        <div className="flex flex-col mt-4 justify-center gap-1">
+        <div className="flex flex-col justify-center gap-1">
           <div className="">
             <div className="flex justify-center items-center gap-3">
               <img
@@ -37,8 +36,7 @@ const RightContainerData = () => {
               <div className="text-white ">
                 <div className="font-medium text-md">
                   <p>
-                    How to make Youtube thumbnail | Must Watch | Growth Channel
-                    | Youtube video
+                    {title}
                   </p>
                 </div>
               </div>
@@ -47,8 +45,8 @@ const RightContainerData = () => {
 
           <div className="flex items-center ml-12">
             <div className="text-gray-300">
-              <p>DeepakVerma</p>
-              <p>110K views • 1 year ago</p>
+              <p>{channelTitle}</p>
+              <p>{statistics.viewCount} Views</p>
             </div>
           </div>
         </div>
