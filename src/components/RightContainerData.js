@@ -3,7 +3,7 @@
 const RightContainerData = ({info}) => {
 
   if (!info) {
-    return <div className='text-white'>Loading...</div>; // or handle the case where info is undefined
+    return <div className='text-white'>Loading...</div>; 
   }
 
 
@@ -13,7 +13,7 @@ const RightContainerData = ({info}) => {
 
 
   return (
-    <div className="">
+    <div className="max-w-full ">
       <div className="h-[360px] w-[320px] ">
         <div>
           <div className="">

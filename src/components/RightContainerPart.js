@@ -17,7 +17,7 @@ const RightContainerPart = () => {
     setVideos(json.items);
   };
   return (
-    <div>
+    <div className="ml-14">
       <div className="">
         <ButtonLists />
       </div>
