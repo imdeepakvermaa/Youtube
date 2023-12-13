@@ -10,7 +10,7 @@ import {
   faShare,
   faThumbsDown,
   faThumbsUp,
-  faEllipsis
+  faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 
 const WatchPage = () => {
@@ -39,7 +39,7 @@ const WatchPage = () => {
 
         const data = await response.json();
         const snippet = data.items[0].snippet;
-        const statistics = data.items[0].statistics; // Corrected index here
+        const statistics = data.items[0].statistics;
         setVideoDetails({
           title: snippet.title,
           description: snippet.description,
@@ -68,52 +68,72 @@ const WatchPage = () => {
         allowFullScreen
       ></iframe>
 
-      <div>
-        <div>
-          <h2 className="text-xl font-bold ">{videoDetails.title}</h2>
-          {/* <p>{videoDetails.description}</p> */}
+      <div className="">
+        <div className="mt-3">
+          <p className=" font-bold text-xl">{videoDetails.title}</p>
         </div>
 
-        <div>
-          <div>
+        <div className="flex gap-24 mt-1">
+          <div className="flex items-center">
             <div>
-              <img src={videoDetails.ChannelDp} alt="" />
+              <img
+                src={videoDetails.ChannelDp}
+                alt="channel-logo"
+                className="rounded-full h-12 w-12"
+              />
             </div>
-            <div>
-              <p className="text-white">{videoDetails.channelTitle}</p>
-              <p>9.89M subscriber</p>
+            <div className="ml-2">
+              <p className="text-white font-bold text-lg">
+                {videoDetails.channelTitle}
+              </p>
+              <p className="font-medium text-gray-400 text-xs">
+                9.89M subscribers
+              </p>
             </div>
-            <div>
-              <button className="text-black text-lg bg-white w-32 h-10 rounded-2xl font-semibold">
+            <div className="ml-12">
+              <button className="text-black text-lg bg-white w-32 h-8 rounded-2xl font-semibold">
                 <FontAwesomeIcon icon={faBell} /> Subscribe
               </button>
             </div>
           </div>
 
-          <div className="text-white">
-            <div>
-              <button>
-                <FontAwesomeIcon icon={faThumbsUp} />
-                {videoDetails.likeCount >= 1000
-                  ? (videoDetails.likeCount / 1000).toFixed(1) + "K"
-                  : videoDetails.likeCount}{" "}
-                | <FontAwesomeIcon icon={faThumbsDown} />
-              </button>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faShare} />
-              <p>Share</p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faDownload} />
-              <p>Download</p>
-            </div>
-
-
-            <div>
-              <FontAwesomeIcon icon={faEllipsis}/>
+          <div className="flex items-center justify-between ">
+            <div className="flex gap-6 items-center ">
+              <div className="gap-4 text-black ">
+                <button className="w-32 h-8 rounded-2xl font-bold text-lg bg-gray-500 ">
+                  <FontAwesomeIcon icon={faThumbsUp} />
+                  {videoDetails.likeCount >= 1000
+                    ? (videoDetails.likeCount / 1000).toFixed(1) + "K"
+                    : videoDetails.likeCount}{" "}
+                  | <FontAwesomeIcon icon={faThumbsDown} />
+                </button>
+              </div>
+              <div className="text-black  flex items-center justify-center  gap-2 h-8 w-28 rounded-2xl font-bold text-lg bg-gray-500 ">
+                <button className="flex items-center justify-center gap-2  rounded-2xl font-bold text-lg bg-gray-500">
+                  <FontAwesomeIcon
+                    icon={faShare}
+                    className="flex justify-center items-center"
+                  />
+                  <p>Share</p>
+                </button>
+              </div>
+              <div className="text-black  flex items-center justify-center  gap-2 h-8 w-32 rounded-2xl font-bold text-lg bg-gray-500 ">
+                <button className="flex items-center justify-center gap-2  rounded-2xl font-bold text-lg bg-gray-500">
+                  <FontAwesomeIcon
+                    icon={faDownload}
+                    className="flex justify-center items-center"
+                  />
+                  <p>Download</p>
+                </button>
+              </div>
+              <div className="text-black  flex items-center justify-center  gap-2 h-8 w-8 rounded-2xl font-bold text-lg bg-gray-500 ">
+                <button className="flex items-center justify-center gap-2  rounded-2xl font-bold text-lg bg-gray-500">
+                  <FontAwesomeIcon
+                    icon={faEllipsis}
+                    className="flex justify-center items-center"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
