@@ -146,7 +146,7 @@ const WatchPage = () => {
             <p>{videoDetails.viewCount} Views</p>
           </div>
           <div>
-            <p className="text-lg">{videoDetails.description}</p>
+            <p className="text-sm">{videoDetails.description}</p>
           </div>
         </div>
       </div>
