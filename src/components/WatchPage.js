@@ -46,6 +46,7 @@ const WatchPage = () => {
           channelTitle: snippet.channelTitle,
           ChannelDp: snippet.thumbnails.default.url,
           likeCount: statistics.likeCount,
+          viewCount: statistics.viewCount,
         });
       } catch (error) {
         console.error("Error fetching video details:", error);
@@ -135,6 +136,17 @@ const WatchPage = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-2">
+        <div className="flex flex-col w-[900px]  bg-gray-700 text-white rounded-2xl px-4 py-2">
+          <div>
+            <p>{videoDetails.viewCount} Views</p>
+          </div>
+          <div>
+            <p className="text-lg">{videoDetails.description}</p>
           </div>
         </div>
       </div>
