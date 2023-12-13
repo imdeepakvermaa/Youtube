@@ -18,7 +18,7 @@ const WatchPage = () => {
     const fetchVideoDetails = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${searchParams.get(
+          `https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${searchParams.get(
             "v"
           )}&key=${Google_API_Key}`
         );
@@ -29,7 +29,7 @@ const WatchPage = () => {
 
         const data = await response.json();
         const snippet = data.items[0].snippet;
-        const statistics = data.items[2].statistics;
+        const statistics = data.items[0].statistics; // Corrected index here
         setVideoDetails({
           title: snippet.title,
           description: snippet.description,
@@ -45,7 +45,6 @@ const WatchPage = () => {
     dispatch(closeMenu());
     fetchVideoDetails();
   }, [dispatch, searchParams]);
-
   return (
     <div className="text-white px-24 py-4">
       <iframe
@@ -81,7 +80,7 @@ const WatchPage = () => {
             </div>
           </div>
 
-          <div>
+          <div className="text-white">
             <button>
             <FontAwesomeIcon icon={faThumbsUp} />
             </button> 
