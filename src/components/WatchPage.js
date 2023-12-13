@@ -4,14 +4,24 @@ import { closeMenu } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import { Google_API_Key } from "../utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBell,
+  faDownload,
+  faShare,
+  faThumbsDown,
+  faThumbsUp,
+  faEllipsis
+} from "@fortawesome/free-solid-svg-icons";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
-  const [videoDetails, setVideoDetails] = useState({
-    title: "",
-    description: "",
-  },[]);
+  const [videoDetails, setVideoDetails] = useState(
+    {
+      title: "",
+      description: "",
+    },
+    []
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -81,10 +91,30 @@ const WatchPage = () => {
           </div>
 
           <div className="text-white">
-            <button>
-            <FontAwesomeIcon icon={faThumbsUp} />
-            </button> 
-            {videoDetails.likeCount}
+            <div>
+              <button>
+                <FontAwesomeIcon icon={faThumbsUp} />
+                {videoDetails.likeCount >= 1000
+                  ? (videoDetails.likeCount / 1000).toFixed(1) + "K"
+                  : videoDetails.likeCount}{" "}
+                | <FontAwesomeIcon icon={faThumbsDown} />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faShare} />
+              <p>Share</p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faDownload} />
+              <p>Download</p>
+            </div>
+
+
+            <div>
+              <FontAwesomeIcon icon={faEllipsis}/>
+            </div>
           </div>
         </div>
       </div>
