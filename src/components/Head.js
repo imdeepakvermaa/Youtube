@@ -14,30 +14,21 @@ import { NavMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 const Head = () => {
-  const [searchQuery,setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     console.log(searchQuery);
 
-    const timer = setTimeout(() => getSearchSuggestions(),200);
+    const timer = setTimeout(() => getSearchSuggestions(), 200);
     return () => {
       clearTimeout(timer);
-    }
-
-  },[searchQuery]);
+    };
+  }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
-    console.log(json[1]); 
-
-  }
-
-
-
-
-
-
-
+    console.log(json[1]);
+  };
 
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
@@ -66,8 +57,7 @@ const Head = () => {
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
           <div className="flex justify-center items-center">
             <input
-            onChange={(e) => setSearchQuery(e.target.value)}
-            
+              onChange={(e) => setSearchQuery(e.target.value)}
               type="text"
               placeholder="Search"
               className="w-full md:w-[500px] h-9 bg-gray-600 text-black rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
