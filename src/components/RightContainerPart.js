@@ -25,7 +25,7 @@ const RightContainerPart = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-14  p-8 ">
         {videos.map((video) => (
           <Link to={"/watch?v=" + video.id}>
-            <div className=" ">
+            <div>
               <RightContainerData key={video.id} info={video} />
             </div>
           </Link>
