@@ -55,15 +55,29 @@ const Head = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-          <div className="flex justify-center items-center">
-            <input
-              onChange={(e) => setSearchQuery(e.target.value)}
-              type="text"
-              placeholder="Search"
-              className="w-full md:w-[500px] h-9 bg-gray-600 text-black rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
-            />
-            <div className="flex justify-center items-center w-10 h-9 border-gray-400 bg-gray-600 text-white rounded-r-2xl">
-              <FontAwesomeIcon icon={faMagnifyingGlass} className="h-5" />
+          <div>
+            <div className="flex justify-center items-center">
+              <input
+                onChange={(e) => setSearchQuery(e.target.value)}
+                type="text"
+                placeholder="Search"
+                className="w-full md:w-[500px] h-9 bg-gray-600 text-black rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
+              />
+              <div className="flex justify-center items-center w-10 h-9 border-gray-400 bg-gray-600 text-white rounded-r-2xl">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="h-5" />
+              </div>
+            </div>
+            <div className="fixed bg-gray-800 rounded-xl mt-1 w-[500px]">
+              <ul className="px-2">
+                <li>iphone</li>
+                <li>iphone 13</li>
+                <li>iphone 14</li>
+                <li>iphone pro</li>
+                <li>iphone pro max</li>
+                <li>iphone plus</li>
+                <li>iphone mini</li>
+              </ul>
+
             </div>
           </div>
           <div className="flex justify-center items-center">
