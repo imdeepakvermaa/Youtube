@@ -69,7 +69,7 @@ const WatchPage = () => {
         allowFullScreen
       ></iframe>
 
-      <div className="">
+      <div className="w-[900px]">
         <div className="mt-3">
           <p className=" font-bold text-xl">{videoDetails.title}</p>
         </div>

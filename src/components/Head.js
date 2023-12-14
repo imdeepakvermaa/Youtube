@@ -16,14 +16,17 @@ const Head = () => {
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
     dispatch(NavMenu());
-
-  }
+  };
   return (
     <div className="m-2 p-2 text-white">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-16 ml-8 mr-8 ">
         <div className="flex gap-6">
           <div>
-            <FontAwesomeIcon onClick={toggleMenuHandler} icon={faBars} className="h-5 cursor-pointer"  />
+            <FontAwesomeIcon
+              onClick={toggleMenuHandler}
+              icon={faBars}
+              className="h-5 cursor-pointer"
+            />
           </div>
           <div>
             <img
