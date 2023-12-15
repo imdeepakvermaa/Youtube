@@ -8,6 +8,7 @@ import {
   faVideo,
   faBell,
   faUser,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { NavMenu } from "../utils/appSlice";
@@ -15,6 +16,8 @@ import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestion, setSuggestion] = useState(false);
   useEffect(() => {
     console.log(searchQuery);
 
@@ -28,6 +31,7 @@ const Head = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     console.log(json[1]);
+    setSuggestions(json[1]);
   };
 
   const dispatch = useDispatch();
@@ -59,6 +63,8 @@ const Head = () => {
             <div className="flex justify-center items-center">
               <input
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setSuggestion(true)}
+                onBlur={() => setSuggestion(false)}
                 type="text"
                 placeholder="Search"
                 className="w-full md:w-[500px] h-9 bg-gray-600 text-black rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
@@ -67,17 +73,21 @@ const Head = () => {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-5" />
               </div>
             </div>
-            <div className="fixed bg-gray-800 rounded-xl mt-1 w-[500px]">
-              <ul className="px-2">
-                <li>iphone</li>
-                <li>iphone 13</li>
-                <li>iphone 14</li>
-                <li>iphone pro</li>
-                <li>iphone pro max</li>
-                <li>iphone plus</li>
-                <li>iphone mini</li>
-              </ul>
-
+            <div>
+              <div className="">
+                {showSuggestion && (
+                  <p className="fixed bg-gray-800 rounded-xl w-[500px] flex flex-col justify-center mt-2 ">
+                    {suggestions.map((s) => (
+                      <p
+                        key={s}
+                        className="font-semibold text-base px-5 mb-3 hover:bg-gray-700 "
+                      >
+                        <FontAwesomeIcon className="mr-3" icon={faSearch} /> {s}
+                      </p>
+                    ))}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
           <div className="flex justify-center items-center">
