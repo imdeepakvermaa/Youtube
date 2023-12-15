@@ -7,3 +7,6 @@ export const YOUTUBE_API =
 
 export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="; 
 // Query
+
+
+export const OffSetLiveChat = 10 ;
