@@ -74,7 +74,7 @@ const WatchPage = () => {
       </div>
 
       <div>
-        <LiveChat/>
+        <LiveChat />
       </div>
     </div>
   );

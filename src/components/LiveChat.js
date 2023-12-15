@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 
 const LiveChat = () => {
+    useEffect(() => {
+        const  i = setInterval(() => {
+            console.log("API polling");
+
+        },2000);
+
+        return () => clearInterval(i);
+
+    },[]);      
   return (
     <div className="text-white mt-3 ">
       <div className="h-[500px] w-[400px] border border-gray-200 rounded-lg">
@@ -13,18 +22,7 @@ const LiveChat = () => {
             name="Deepak Verma"
             message="Your videos are very helpful thank you🙏"
           />
-          <ChatMessage
-            name="Deepak Verma"
-            message="Your videos are very helpful thank you🙏"
-          />
-          <ChatMessage
-            name="Deepak Verma"
-            message="Your videos are very helpful thank you🙏"
-          />
-          <ChatMessage
-            name="Deepak Verma"
-            message="Your videos are very helpful thank you🙏"
-          />
+          
         </div>
       </div>
     </div>
