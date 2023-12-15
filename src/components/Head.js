@@ -1,4 +1,3 @@
-// Head.js
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,34 +9,49 @@ import {
   faUser,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestion, setSuggestion] = useState(false);
-  useEffect(() => {
-    console.log(searchQuery);
+  const searchCache = useSelector((store) => store.search);
+  const dispatch = useDispatch();
 
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchCache[searchQuery]) {
+        setSuggestions(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestions();
+      }
+    }, 200);
+
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuery]);
+  },[searchQuery]);
 
   const getSearchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     console.log(json[1]);
     setSuggestions(json[1]);
+
+    dispatch(
+      cacheResults({
+        [searchQuery]: json[1],
+      })
+    );
   };
 
-  const dispatch = useDispatch();
   const toggleMenuHandler = () => {
     dispatch(NavMenu());
   };
+
   return (
     <div className="m-2 p-2 text-white">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-16 ml-8 mr-8 ">
