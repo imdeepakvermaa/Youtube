@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { Google_API_Key } from "../utils/constants";
 import LikesAndTitle from "./LikesAndTitle";
 import CommentSection from "./CommentSection";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -50,28 +51,32 @@ const WatchPage = () => {
     fetchVideoDetails();
   }, [dispatch, searchParams]);
   return (
-    <div className="text-white px-24 py-4">
-      <iframe
-        className="rounded-2xl"
-        width="900"
-        height="500"
-        src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+    <div className="flex">
+      <div className="text-white px-20 py-4">
+        <iframe
+          className="rounded-2xl"
+          width="900"
+          height="500"
+          src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
 
-      <div>
-        <LikesAndTitle/>
+        <div>
+          <LikesAndTitle />
+        </div>
+
+        <div>
+          <CommentSection />
+        </div>
       </div>
 
       <div>
-        <CommentSection/>
+        <LiveChat/>
       </div>
-
     </div>
-  
   );
 };
 
