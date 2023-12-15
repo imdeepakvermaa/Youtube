@@ -5,7 +5,7 @@ import searchSlice from "./searchSlice";
 const store = configureStore({
     reducer:{
         app: appSlice,
-        search:searchSlice,
+        search: searchSlice,
     }
 
 
