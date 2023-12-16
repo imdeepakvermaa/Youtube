@@ -7,10 +7,10 @@ const RightContainerData = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="h-[360px] w-[390px] ">
-      <div className="flex flex-col justify-center">
+    <div className=" w-[400px] bg-red-600 ">
+      <div className="flex flex-col">
         <img
-          className="h-[290px] w-[390px]"
+          className="h-[290px] w-[400px] bg-white"
           src={thumbnails?.high?.url}
           alt="thumbnail"
         />

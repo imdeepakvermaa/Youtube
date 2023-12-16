@@ -51,7 +51,7 @@ const WatchPage = () => {
     fetchVideoDetails();
   }, [dispatch, searchParams]);
   return (
-    <div className="flex">
+    <div className="flex mt-16">
       <div className="text-white px-20 py-4">
         <iframe
           className="rounded-2xl"

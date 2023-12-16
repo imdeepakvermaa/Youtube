@@ -17,11 +17,8 @@ const RightContainerPart = () => {
     setVideos(json.items);
   };
   return (
-    <div className="absolute ml-[220px] mt-12">
-      <div className="">
+    <div className="absolute ml-[230px] mt-12">
         <ButtonLists />
-      </div>
-      <div className="">
         <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-2 ">
           {videos.map((video) => (
             <div className="mx-4 my-7">
@@ -32,7 +29,6 @@ const RightContainerPart = () => {
           ))}
         </div>
       </div>
-    </div>
   );
 };
 
