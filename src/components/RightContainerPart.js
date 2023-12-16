@@ -28,7 +28,7 @@ const RightContainerPart = () => {
             </div>
           ))}
         </div>
-      </div>
+        </div>
   );
 };
 
