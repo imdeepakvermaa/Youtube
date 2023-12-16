@@ -21,7 +21,7 @@ const RightContainerPart = () => {
         <ButtonLists />
         <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-2 ">
           {videos.map((video) => (
-            <div className="mx-4 my-7">
+            <div className="mx-4 my-3">
               <Link to={"/watch?v=" + video.id}>
                 <RightContainerData className="" key={video.id} info={video} />
               </Link>
