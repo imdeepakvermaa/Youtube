@@ -4,8 +4,8 @@ import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import RightContainerPart from "./components/RightContainerPart";
 import WatchPage from "./components/WatchPage";
+import RightContainerPart from "./components/RightContainerPart";
 
 
 const appRouter = createBrowserRouter([{

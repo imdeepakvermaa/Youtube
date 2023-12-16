@@ -51,7 +51,7 @@ const LeftContainerPart = () => {
   if (!isNavOpen) return null; 
 
   return (
-    <div className="fixed h-[900px] w-[220px]  overflow-y-scroll mt-16">
+    <div className="fixed h-[900px] w-[220px]  overflow-y-scroll mt-16 z-5 bg-black">
       <div className="flex flex-col gap-7 mt-10">
         {contentItems.map((items, index) => (
           <div key={index} className="flex items-center text-white ml-5 gap-7">
