@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import RightContainerData from "./RightContainerData";
-import ButtonLists from "./ButtonLists";
 import { YOUTUBE_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 
@@ -18,7 +17,6 @@ const RightContainerPart = () => {
   };
   return (
     <div className="absolute ml-[230px] mt-12">
-        <ButtonLists />
         <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-2 ">
           {videos.map((video) => (
             <div className="mx-4 my-3">

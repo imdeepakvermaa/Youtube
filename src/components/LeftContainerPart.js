@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -46,15 +48,18 @@ const LeftContainerPart = () => {
     
   ];
 
-  const isNavOpen = useSelector(store => store.app.isNavOpen);
+  const isNavOpen = useSelector((store) => store.app.isNavOpen);
 
-  if (!isNavOpen) return null; 
+  if (!isNavOpen) return null;
 
   return (
-    <div className="fixed h-[900px] w-[220px]  overflow-y-scroll mt-16 z-5 bg-black">
-      <div className="flex flex-col gap-7 mt-10">
+    <div className="fixed h-[900px] w-[220px] overflow-y-auto mt-16 z-5 bg-black">
+      <div className="flex flex-col gap-7 mt-10 p-4">
         {contentItems.map((items, index) => (
-          <div key={index} className="flex items-center text-white ml-5 gap-7">
+          <div
+            key={index}
+            className="flex items-center text-white gap-7 cursor-pointer hover:text-gray-300"
+          >
             <div>
               <FontAwesomeIcon icon={items.icon} className="h-5" />
             </div>
@@ -67,9 +72,12 @@ const LeftContainerPart = () => {
 
       <div className="mt-9">
         <h2 className="text-white text-xl font-bold ml-5">Explore</h2>
-        <div className="flex flex-col gap-7 mt-6">
+        <div className="flex flex-col gap-7 mt-6 p-4">
           {ExploreItems.map((items, index) => (
-            <div key={index} className="flex items-center text-white ml-5 gap-7">
+            <div
+              key={index}
+              className="flex items-center text-white gap-7 cursor-pointer hover:text-gray-300"
+            >
               <div>
                 <FontAwesomeIcon icon={items.icon} className="h-5" />
               </div>
