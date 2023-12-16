@@ -3,7 +3,7 @@ import Button from './Button';
 
 const ButtonLists = () => {
   return (
-    <div className='flex justify-center items-center overflow-x-auto max-w-screen-lg mx-auto'>
+    <div className='flex justify-center items-center overflow-x-scroll  max-w-screen-lg mx-auto '>
       <Button name="All"/>
       <Button name="mixes"/>
       <Button name="Music"/>

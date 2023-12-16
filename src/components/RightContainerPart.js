@@ -17,18 +17,20 @@ const RightContainerPart = () => {
     setVideos(json.items);
   };
   return (
-    <div className="ml-14">
+    <div className="absolute ml-[220px] mt-12">
       <div className="">
         <ButtonLists />
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-14  p-8 ">
-        {videos.map((video) => (
-          <Link to={"/watch?v=" + video.id}>
-            <div>
-              <RightContainerData key={video.id} info={video} />
+      <div className="">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-2 ">
+          {videos.map((video) => (
+            <div className="mx-4 my-7">
+              <Link to={"/watch?v=" + video.id}>
+                <RightContainerData className="" key={video.id} info={video} />
+              </Link>
             </div>
-          </Link>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
