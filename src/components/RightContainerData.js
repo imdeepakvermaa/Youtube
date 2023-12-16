@@ -6,8 +6,6 @@ const RightContainerData = ({info}) => {
     return <div className='text-white'>Loading...</div>; 
   }
 
-
-  console.log(info);
   const {snippet , statistics} = info;
   const {channelTitle , title , thumbnails} = snippet;
 
@@ -30,7 +28,7 @@ const RightContainerData = ({info}) => {
             <div className="flex justify-center items-center gap-3">
               <img
                 className="h-[40px] w-10 rounded-[600px]  "
-                src="https://yt3.ggpht.com/RN0szlDOp4eceo7AzCQhd4IhPYKE96xhwzLcRhDM11bhnL1wIgROAH3jy-O--Ywexf7ykQGX=s68-c-k-c0x00ffffff-no-rj"
+                src={thumbnails?.high?.url}
                 alt="logo"
               />
               <div className="text-white ">

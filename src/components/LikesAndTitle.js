@@ -49,7 +49,7 @@ const LikesAndTitle = () => {
             viewCount: statistics.viewCount,
           });
         } catch (error) {
-          console.error("Error fetching video details:", error);
+          console.error(error);
         }
       };
   
