@@ -27,14 +27,14 @@ const RightContainerData = ({ info }) => {
           src={thumbnails?.high?.url}
           alt="thumbnail"
         />
-        <div className="flex justify-center items-center gap-3 -mt-7">
+        <div className="flex items-center gap-3 -mt-7">
           <img
             className="h-[40px] w-10 rounded-[600px]  "
             src={thumbnails?.high?.url}
             alt="logo"
           />
           <div className="text-white ">
-            <div className="font-medium text-md">
+            <div className="font-medium text-md w-[350px]">
               <p>{title}</p>
             </div>
           </div>
