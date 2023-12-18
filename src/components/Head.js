@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,6 +70,7 @@ const Head = () => {
                 alt="Website-logo"
                 className="w-24 text-white"
               />
+              
             </div>
           </div>
 
