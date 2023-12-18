@@ -20,7 +20,7 @@ const RightContainerData = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="w-400px">
+    <div className="w-[400px] ">
       <div className="flex flex-col">
         <img
           className="h-[290px] w-[400px] rounded-xl"

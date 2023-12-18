@@ -8,7 +8,7 @@ const chatSlice = createSlice({
   },
   reducers: {
     addMessage: (state, action) => {
-        state.messages.splice(OffSetLiveChat,1);
+        state.messages.slice(OffSetLiveChat,1);
     
       state.messages.push(action.payload);
     },
