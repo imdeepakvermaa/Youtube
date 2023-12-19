@@ -56,6 +56,16 @@ const LikesAndTitle = () => {
       dispatch(closeMenu());
       fetchVideoDetails();
     }, [dispatch, searchParams]);
+
+    const formatViewCount = (count) => {
+      if (count >= 1e6) {
+        return `${(count / 1e6).toFixed(1)}M`;
+      } else if (count >= 1e3) {
+        return `${(count / 1e3).toFixed(1)}K`;
+      } else {
+        return count.toString();
+      }
+    };
   return (
     <div>
       <div className="w-[900px]">
@@ -73,7 +83,7 @@ const LikesAndTitle = () => {
               />
             </div>
             <div className="ml-2">
-              <p className="text-white font-bold text-lg">
+              <p className="text-white font-bold text-sm">
                 {videoDetails.channelTitle}
               </p>
               <p className="font-medium text-gray-400 text-xs">
@@ -135,7 +145,7 @@ const LikesAndTitle = () => {
             <p>{videoDetails.viewCount} Views</p>
           </div>
           <div className="">
-            <p className="text-sm">{videoDetails.description}</p>
+            <p className="text-sm p-4 ">{videoDetails.description}</p>
           </div>
         </div>
       </div>
