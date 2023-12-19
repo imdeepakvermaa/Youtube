@@ -120,7 +120,7 @@ const LikesAndTitle = () => {
                 <button className="flex items-center justify-center gap-2  rounded-2xl font-bold text-lg bg-gray-500">
                   <FontAwesomeIcon
                     icon={faEllipsis}
-                    className="flex justify-center items-center"
+                    className="flex justify-center items-center "
                   />
                 </button>
               </div>
@@ -134,7 +134,7 @@ const LikesAndTitle = () => {
           <div>
             <p>{videoDetails.viewCount} Views</p>
           </div>
-          <div>
+          <div className="">
             <p className="text-sm">{videoDetails.description}</p>
           </div>
         </div>
