@@ -6,6 +6,7 @@ import { Google_API_Key } from "../utils/constants";
 import LikesAndTitle from "./LikesAndTitle";
 import CommentSection from "./CommentSection";
 import LiveChat from "./LiveChat";
+import RecommendedVideos from "./RecommendedVideos";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -74,7 +75,12 @@ const WatchPage = () => {
       </div>
 
       <div>
-        <LiveChat />
+        <div>
+          <LiveChat />
+        </div>
+        <div>
+          <RecommendedVideos/>
+        </div>
       </div>
     </div>
   );

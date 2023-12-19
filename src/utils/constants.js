@@ -10,3 +10,6 @@ export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/sea
 
 
 export const OffSetLiveChat = 10 ;
+
+
+export const RECOMMENDED_YT_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key="+Google_API_Key;

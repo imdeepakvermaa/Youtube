@@ -145,7 +145,7 @@ const LikesAndTitle = () => {
             <p>{videoDetails.viewCount} Views</p>
           </div>
           <div className="">
-            <p className="text-sm p-4 ">{videoDetails.description}</p>
+            <p className="text-sm ">{videoDetails.description}</p>
           </div>
         </div>
       </div>
