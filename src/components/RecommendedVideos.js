@@ -3,6 +3,7 @@ import RightContainerData from "./RightContainerData";
 import { RECOMMENDED_YT_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import Buttons from "./Buttons";
+import RecommendedVideosData from "./RecommendedVideosData";
 
 const RecommendedVideos = () => {
   const [videos, setVideos] = useState([]);
@@ -17,15 +18,12 @@ const RecommendedVideos = () => {
     setVideos(json.items);
   };
   return (
-    <div className="absolute ml-[230px] ">
-      <div className="mt-14">
-        <Buttons />
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-2 ">
+    <div className="">
+      <div className="">
         {videos.map((video) => (
-          <div className="mx-4 my-3">
+          <div className="">
             <Link to={"/watch?v=" + video.id}>
-              <RightContainerData className="" key={video.id} info={video} />
+              <RecommendedVideosData className="" key={video.id} info={video} />
             </Link>
           </div>
         ))}
