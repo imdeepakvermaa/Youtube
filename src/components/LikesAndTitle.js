@@ -83,7 +83,7 @@ const LikesAndTitle = () => {
               />
             </div>
             <div className="ml-2">
-              <p className="text-white font-bold text-sm">
+              <p className="text-white font-bold text-xs w-[100px] ">
                 {videoDetails.channelTitle}
               </p>
               <p className="font-medium text-gray-400 text-xs">

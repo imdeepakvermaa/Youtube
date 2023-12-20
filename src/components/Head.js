@@ -70,7 +70,6 @@ const Head = () => {
                 alt="Website-logo"
                 className="w-24 text-white"
               />
-              
             </div>
           </div>
 
@@ -83,7 +82,7 @@ const Head = () => {
                   onBlur={() => setSuggestion(false)}
                   type="text"
                   placeholder="Search"
-                  className="w-full md:w-[500px] h-9 bg-gray-600 text-black rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
+                  className="w-full md:w-[500px] h-9 bg-gray-700 text-white p-4 rounded-l-2xl ring-0 focus:ring-0 shadow-none focus:shadow-none focus:outline-none border-none focus:border-none"
                 />
                 <div className="flex justify-center items-center w-10 h-9 border-gray-400 bg-gray-600 text-white rounded-r-2xl">
                   <FontAwesomeIcon icon={faMagnifyingGlass} className="h-5" />

@@ -20,7 +20,7 @@ const RecommendedVideosData = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center gap-2 mt-2">
       <div className="rounded-2xl overflow-hidden">
         <img src={thumbnails?.high?.url} alt="" className="w-48 h-32" />
       </div>
