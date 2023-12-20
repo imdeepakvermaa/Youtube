@@ -21,21 +21,23 @@ const RecommendedVideosData = ({ info }) => {
 
   return (
     <div className="flex items-center justify-center gap-2">
+      <div className="rounded-2xl overflow-hidden">
         <img src={thumbnails?.high?.url} alt="" className="w-48 h-32" />
-        
-        <div className="flex flex-col ">
-          <div className="text-white ">
-            <div className="font-medium text-sm w-[200px]">
-              <p>{title}</p>
-            </div>
-          </div>
+      </div>
 
-          <div className="text-gray-300 text-sm">
-            <p>{channelTitle}</p>
-            <p>{formatViewCount(statistics.viewCount)} Views</p>
+      <div className="flex flex-col ">
+        <div className="text-white ">
+          <div className="font-medium text-sm w-[200px]">
+            <p>{title}</p>
           </div>
         </div>
+
+        <div className="text-gray-300 text-xs">
+          <p>{channelTitle}</p>
+          <p>{formatViewCount(statistics.viewCount)} Views</p>
+        </div>
       </div>
+    </div>
   );
 };
 

@@ -42,6 +42,7 @@ const WatchPage = () => {
           ChannelDp: snippet.thumbnails.default.url,
           likeCount: statistics.likeCount,
           viewCount: statistics.viewCount,
+          commentCount: statistics.commentCount,
         });
       } catch (error) {
         console.error("Error fetching video details:", error);
